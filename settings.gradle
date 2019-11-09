@@ -1,0 +1,2 @@
+include ':app', ':noqoodysdk_lib'
+rootProject.name='Noqoody Pay SDK'

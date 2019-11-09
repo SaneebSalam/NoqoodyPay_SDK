@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qmobileme.www.noqoodysdk_lib" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+        <activity android:name=".Activity_Payment_Option" />
+        <activity android:name=".Activity_Payment" />
+    </application>
+</manifest>

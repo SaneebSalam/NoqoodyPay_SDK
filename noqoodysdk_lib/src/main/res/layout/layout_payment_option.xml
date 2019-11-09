@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="@string/payment_option"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radiogroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/payviamobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:drawableEnd="@drawable/qpaymobile"
+                    android:text="@string/pay_via_mobile" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/ashlight" />
+
+                <RadioButton
+                    android:id="@+id/payviacredit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:drawableEnd="@drawable/creditcardpay"
+                    android:enabled="true"
+                    android:text="@string/pay_via_credit_card" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/ashlight" />
+
+                <RadioButton
+                    android:id="@+id/payviaibcard"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:drawableEnd="@drawable/creditcardpay"
+                    android:enabled="true"
+                    android:text="@string/pay_via_credit_card" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/ashlight" />
+
+                <RadioButton
+                    android:id="@+id/payviadebit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:drawableEnd="@drawable/napspay"
+                    android:enabled="true"
+                    android:text="@string/pay_via_debit_card" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/ashlight" />
+
+
+                <!--<RadioButton-->
+                <!--android:id="@+id/payviacash"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:drawableEnd="@drawable/cashpay"-->
+                <!--android:text="@string/pay_via_cash" />-->
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="@color/ashlight" />-->
+
+
+                <!--<RadioButton-->
+                <!--android:id="@+id/payvianoqoody"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:drawableEnd="@drawable/noqoodypal_icon"-->
+                <!--android:enabled="true"-->
+                <!--android:text="@string/pay_via_noqoody" />-->
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="@color/ashlight" />-->
+
+
+                <RadioButton
+                    android:id="@+id/payviapaypal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:drawableEnd="@drawable/paypalpay"
+                    android:enabled="true"
+                    android:text="@string/pay_via_paypal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginTop="-20dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="@string/comingsoon"
+                    android:textColor="#cac8c8"
+                    android:textSize="10dp"
+                    android:visibility="gone" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/Pay_payment"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/round_corner_blue"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/buy"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="7dp"
+                android:drawableEnd="@drawable/noqoodypay_logo"
+                android:drawablePadding="5dp"
+                android:gravity="center|end"
+                android:text="@string/powered_by"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/progressBarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_trans"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="visible" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Noqoodysdk_Lib</string>
+    <string name="pleasewait">Please wait…</string>
+    <string name="payment_option">PAYMENT OPTION</string>
+
+    <string name="pay_via_mobile">Pay via QMobile Pay</string>
+    <string name="pay_via_credit_card">Pay via Credit Card</string>
+    <string name="pay_via_card">Pay via Card</string>
+    <string name="pay_via_debit_card">Pay via Debit Card</string>
+    <string name="pay_via_cash">Pay via Cash</string>
+    <string name="pay_via_paypal">Pay Via Paypal</string>
+    <string name="comingsoon">Coming Soon…</string>
+    <string name="powered_by">Powered By</string>
+    <string name="buy">BUY</string>
+</resources>
