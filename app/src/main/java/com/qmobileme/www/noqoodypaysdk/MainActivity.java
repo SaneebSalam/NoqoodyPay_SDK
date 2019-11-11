@@ -9,8 +9,8 @@ import android.view.View;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.qmobileme.www.noqoodysdk_lib.Activity_Payment_Option;
 import com.qmobileme.www.noqoodysdk_lib.Noqoody_Keys;
+import com.qmobileme.www.noqoodysdk_lib.Pay;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,11 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void Pay(View view) {
 
-        Intent intent = new Intent(this, Activity_Payment_Option.class);
-        intent.putExtra(Noqoody_Keys.UserName, "FionaTomy");
-        intent.putExtra(Noqoody_Keys.Password, "Kt8$4S@n");
-        startActivityForResult(intent, 101);
-        overridePendingTransition(com.qmobileme.www.noqoodysdk_lib.R.anim.anim_slide_in_left,
-                com.qmobileme.www.noqoodysdk_lib.R.anim.anim_slide_out_left);
+        new Pay(MainActivity.this,"FionaTomy","Kt8$4S@n");
     }
 }
