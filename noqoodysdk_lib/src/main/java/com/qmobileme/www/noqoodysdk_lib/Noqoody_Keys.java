@@ -6,8 +6,9 @@ package com.qmobileme.www.noqoodysdk_lib;
  */
 public class Noqoody_Keys {
 
-    public static String UserName = "UserName";
-    public static String Password = "Password";
+    public static Integer Activity_RequestCode = 101;
+    static String UserName = "UserName";
+    static String Password = "Password";
     static String paymenturl = "paymenturl";
     static String RedirectUrl = "RedirectUrl";
     public static String paymentresult = "paymentresult";

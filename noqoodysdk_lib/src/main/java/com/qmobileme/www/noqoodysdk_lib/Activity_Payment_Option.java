@@ -40,7 +40,6 @@ public class Activity_Payment_Option extends AppCompatActivity {
     RelativeLayout progressBarlayout;
     String Reference, UserName, Password, Access_token, ErrorMessage, RedirectURL, PayviaibcardURL, PayviapaypalURL,
             PayviamobileURL, PayvianapsURL, PayviaccURL;
-//    public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -73,47 +72,12 @@ public class Activity_Payment_Option extends AppCompatActivity {
 
         Login(UserName, Password);
 
-//        try {
-//            client = new OkHttpClient();
-//            JSONObject json = new JSONObject();
-//            json.put("grant_type", "password");
-//            json.put("response_type", "token");
-//            json.put("username", UserName);
-//            json.put("password", Password);
-//            String response = post("http://sandbox.noqoodypay.com/API/token", json.toString());
-//            System.out.println(response);
-//        } catch (IOException | JSONException e) {
-//            e.printStackTrace();
-//        }
-
 
     }
-
-//    String run(String url) throws IOException {
-//        Request request = new Request.Builder()
-//                .url(url)
-//                .build();
-//
-//        try (Response response = client.newCall(request).execute()) {
-//            return response.body().string();
-//        }
-//    }
-
-//    String post(String url, String  json) throws IOException {
-//        RequestBody body = RequestBody.create(json, JSON);
-//        Request request = new Request.Builder()
-//                .url(url)
-//                .post(body)
-//                .build();
-//        try (Response response = client.newCall(request).execute()) {
-//            return response.body().string();
-//        }
-//    }
 
 
     @Override
     public void onBackPressed() {
-//        super.onBackPressed();
         ReultMessage(false, "Payment Cancelled");
     }
 
@@ -132,8 +96,6 @@ public class Activity_Payment_Option extends AppCompatActivity {
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        // do anything with response
-                        System.out.println("response: " + response.toString());
 
                         try {
                             Access_token = response.getString("access_token");
@@ -147,8 +109,6 @@ public class Activity_Payment_Option extends AppCompatActivity {
 
                     @Override
                     public void onError(ANError error) {
-                        System.out.println(error.getErrorCode() + " :" + error.getErrorBody());
-                        System.out.println("error: " + error.toString());
                         progressBarlayout.setVisibility(View.GONE);
                         try {
                             ErrorMessage = new JSONObject(error.getErrorBody()).getString("error_description");
@@ -175,20 +135,15 @@ public class Activity_Payment_Option extends AppCompatActivity {
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        // do anything with response
-                        System.out.println("showDialog response: " + response.toString());
 
                         progressBarlayout.setVisibility(View.GONE);
 
                         try {
 
                             if (response.getBoolean("success")) {
-//                                RedirectURL = response.getString("ValidationURL");
                                 RedirectURL = "Home/GetStatus";
                                 RedirectURL = RedirectURL.replace("\\", "");
 
-                                System.out.println("RedirectURL: " + RedirectURL);
-//                                JSONObject PaymentURL = response.getJSONObject("PaymentURL");
 
                                 if (!response.getString("PaypalLink").equalsIgnoreCase("null")) {
                                     isPayviapaypal = true;
@@ -231,7 +186,7 @@ public class Activity_Payment_Option extends AppCompatActivity {
 
                     @Override
                     public void onError(ANError error) {
-                        System.out.println(error.getErrorCode() + " :" + error.getErrorBody());
+//                        System.out.println(error.getErrorCode() + " :" + error.getErrorBody());
                         alert_finish("Payment Error");
                         progressBarlayout.setVisibility(View.GONE);
                     }
@@ -256,11 +211,11 @@ public class Activity_Payment_Option extends AppCompatActivity {
 
 
                 if (selectedId == radiopayviamobile.getId()) {
+                    alert_ok("Coming Soon");
 //                alert_sendSMS("Do you want to pay " + MobilePrice + " QAR from your number", MobileKeyword);
 //                    requestAppPermissions(new String[]{Manifest.permission.SEND_SMS}, SMSRequest);
                 } else if (selectedId == radiopayviadebit.getId()) {
                     Activity_Payment_Option.this.Paymentweb(PayvianapsURL, RedirectURL);
-//                    PayviaCard("RefillByNapsRequestMobile");
                 } else if (selectedId == radiopayviacredit.getId()) {
                     Activity_Payment_Option.this.Paymentweb(PayviaccURL, RedirectURL);
                 } else if (selectedId == radiopayviapaypal.getId()) {
@@ -281,11 +236,9 @@ public class Activity_Payment_Option extends AppCompatActivity {
         Intent intent = new Intent(this, Activity_Payment.class);
         intent.putExtra(Noqoody_Keys.paymenturl, url);
         intent.putExtra(Noqoody_Keys.RedirectUrl, redirecturl);
-//                                intent.putExtra(Noqoody_Keys.RedirectUrl, response.getString("RedirectUrl"));
-        startActivityForResult(intent, 101);
+        startActivityForResult(intent, Noqoody_Keys.Activity_RequestCode);
         overridePendingTransition(R.anim.anim_slide_in_left,
                 R.anim.anim_slide_out_left);
-//        finish();
 
     }
 
@@ -322,9 +275,7 @@ public class Activity_Payment_Option extends AppCompatActivity {
         Intent intent = new Intent();
         intent.putExtra(Noqoody_Keys.paymentresult, TransactionMessage);
         intent.putExtra(Noqoody_Keys.paymentresult_status, Status);
-
         setResult(Activity.RESULT_OK, intent);
-
         finish();
 
         overridePendingTransition(R.anim.anim_slide_in_right,
@@ -333,7 +284,7 @@ public class Activity_Payment_Option extends AppCompatActivity {
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 101) {
+        if (requestCode == Noqoody_Keys.Activity_RequestCode) {
             if (resultCode == Activity.RESULT_OK) {
                 Intent intent = new Intent();
                 intent.putExtra(Noqoody_Keys.paymentresult, data.getStringExtra(Noqoody_Keys.paymentresult));
