@@ -41,6 +41,7 @@ public class Activity_Payment_sdk extends AppCompatActivity {
     String URL, RedirectUrl;
     RelativeLayout progressbar_layout;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
