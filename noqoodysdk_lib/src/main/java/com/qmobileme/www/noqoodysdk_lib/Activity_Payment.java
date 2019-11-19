@@ -39,7 +39,7 @@ public class Activity_Payment extends AppCompatActivity {
 
     WebView webview;
     String URL, RedirectUrl;
-    RelativeLayout progressBarlayout;
+    RelativeLayout progressbar_layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class Activity_Payment extends AppCompatActivity {
             getSupportActionBar().hide();
 
         webview = findViewById(R.id.webview);
-        progressBarlayout = findViewById(R.id.progressBarlayout);
+        progressbar_layout = findViewById(R.id.progressbar_layout);
 
 
         URL = getIntent().getStringExtra(Noqoody_Keys.paymenturl);
@@ -76,7 +76,7 @@ public class Activity_Payment extends AppCompatActivity {
 
     @SuppressLint("SetJavaScriptEnabled")
     private void DisplayURL(String value) {
-        progressBarlayout.setVisibility(View.VISIBLE);
+        progressbar_layout.setVisibility(View.VISIBLE);
 
         webview.getSettings().setJavaScriptEnabled(true);
         webview.getSettings().setLoadsImagesAutomatically(true);
@@ -85,7 +85,7 @@ public class Activity_Payment extends AppCompatActivity {
         webview.setWebChromeClient(new WebChromeClient() {
             public void onProgressChanged(WebView view, int progress) {
                 if (progress == 100) {
-                    progressBarlayout.setVisibility(View.GONE);
+                    progressbar_layout.setVisibility(View.GONE);
                 }
             }
         });
@@ -179,4 +179,6 @@ public class Activity_Payment extends AppCompatActivity {
                 R.anim.anim_slide_out_right);
 
     }
+
+
 }
