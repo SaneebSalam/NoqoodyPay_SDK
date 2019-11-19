@@ -35,7 +35,7 @@ import javax.xml.parsers.ParserConfigurationException;
  * Created by Saneeb Salam
  * on 01-12-2018.
  */
-public class Activity_Payment extends AppCompatActivity {
+public class Activity_Payment_sdk extends AppCompatActivity {
 
     WebView webview;
     String URL, RedirectUrl;
@@ -44,7 +44,7 @@ public class Activity_Payment extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_payment);
+        setContentView(R.layout.layout_payment_sdk);
 
         if (getSupportActionBar() != null)
             getSupportActionBar().hide();

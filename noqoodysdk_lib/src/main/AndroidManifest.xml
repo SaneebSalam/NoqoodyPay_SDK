@@ -5,6 +5,6 @@
 
     <application>
         <activity android:name=".Activity_Payment_Option" />
-        <activity android:name=".Activity_Payment" />
+        <activity android:name=".Activity_Payment_sdk" />
     </application>
 </manifest>

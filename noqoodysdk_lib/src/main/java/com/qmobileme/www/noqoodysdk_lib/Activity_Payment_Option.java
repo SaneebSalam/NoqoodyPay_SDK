@@ -233,7 +233,7 @@ public class Activity_Payment_Option extends AppCompatActivity {
     void Paymentweb(String url, String redirecturl) {
 
 
-        Intent intent = new Intent(this, Activity_Payment.class);
+        Intent intent = new Intent(this, Activity_Payment_sdk.class);
         intent.putExtra(Noqoody_Keys.paymenturl, url);
         intent.putExtra(Noqoody_Keys.RedirectUrl, redirecturl);
         startActivityForResult(intent, Noqoody_Keys.Activity_RequestCode);
